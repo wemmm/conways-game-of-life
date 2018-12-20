@@ -16,11 +16,7 @@ def random_board(width, height):
     for x in range(0, width):
         for y in range(0, height):
             number = random_number()
-            if number < 0.5:
-                cell = ALIVE
-            else:
-                cell = DEAD
-            board[x][y] = cell
+            board[x][y] = ALIVE if random_number() > 0.5 else DEAD
 
     return board
 
