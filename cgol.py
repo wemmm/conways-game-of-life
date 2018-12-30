@@ -4,7 +4,7 @@ ALIVE = "X"
 DEAD = " "
 
 def empty_board(width, height):
-  return [[DEAD for cells in range(height)] for cells in range(width)]
+    return [[DEAD for cells in range(height)] for cells in range(width)]
 
 
 def random_number():
@@ -21,5 +21,16 @@ def random_board(width, height):
     return board
 
 
+def pretty_print(board, width, height):
+    rows = []
+    game_board = board(width, height)
+    for y in range(0, height):
+        row = ''
+        for x in range(0, width):
+            row += game_board[x][y]
+        rows.append(row)
+    print "\n".join(rows)
+
+
 if __name__ == "__main__":
-    print random_board(10, 10)
+    pretty_print(random_board, 60, 20)
