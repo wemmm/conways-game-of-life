@@ -1,24 +1,38 @@
 import random
 
-ALIVE = "X"
+ALIVE = "o"
 DEAD = " "
+
 
 def empty_board(width, height):
     return [[DEAD for cells in range(height)] for cells in range(width)]
-
-
-def random_number():
-    return random.random()
 
 
 def random_board(width, height):
     board = empty_board(width, height)
     for x in range(0, width):
         for y in range(0, height):
-            number = random_number()
-            board[x][y] = ALIVE if random_number() > 0.5 else DEAD
+            number = random.random()
+            board[x][y] = ALIVE if number > 0.5 else DEAD
 
     return board
+
+
+def live_neighbours(coordinates, board):
+    x = coordinates[0]
+    y = coordinates[1]
+    cell = board[x][y]
+    live_neighbours = 0
+    if board[x][y + 1] == ALIVE and (y + 1) < len(board):
+        live_neighbours += 1
+    if board[x][y - 1] == ALIVE and (y - 1) >= 0:
+        live_neighbours += 1
+    if board[x + 1][y] == ALIVE and (x + 1) < len(board[0]):
+        live_neighbours += 1
+    if board[x - 1][y] == ALIVE and (x - 1) >= 0:
+        live_neighbours += 1
+        
+    return live_neighbours
 
 
 def pretty_print(board, width, height):
