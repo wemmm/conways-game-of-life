@@ -31,7 +31,15 @@ def live_neighbours(coordinates, board):
         live_neighbours += 1
     if board[x - 1][y] == ALIVE and (x - 1) >= 0:
         live_neighbours += 1
-        
+    if board[x - 1][y - 1] == ALIVE and (x - 1) >= 0 and (y - 1) >= 0:
+        live_neighbours += 1
+    if board[x + 1][y + 1] == ALIVE and (x + 1) < len(board) and (y + 1) < len(board[0]):
+        live_neighbours += 1
+    if board[x - 1][y + 1] == ALIVE and (x - 1) >= 0 and (y + 1) < len(board[0]):
+        live_neighbours += 1
+    if board[x + 1][y - 1] == ALIVE and (x + 1) < len(board) and (y - 1) >= 0:
+        live_neighbours += 1
+    print board
     return live_neighbours
 
 
@@ -47,4 +55,5 @@ def pretty_print(board, width, height):
 
 
 if __name__ == "__main__":
-    pretty_print(random_board, 60, 20)
+    print live_neighbours([0,0], random_board(3,3))
+    # pretty_print(random_board, 60, 20)
