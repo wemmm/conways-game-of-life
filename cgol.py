@@ -79,13 +79,12 @@ def pretty_print(board):
     print "\n".join(lines)
 
 
-
 def run(board):
     next_state = board
     while True:
         pretty_print(next_state)
         next_state = next_board_state(next_state)
-        time.sleep(0.05)
+        time.sleep(0.08)
 
 
 if __name__ == "__main__":
