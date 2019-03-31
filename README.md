@@ -10,3 +10,11 @@ The universe of the Game of Life is an infinite, two-dimensional orthogonal grid
 3. Any live cell with more than three live neighbours dies, as if by overpopulation.
 4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 ```
+
+
+## To run:
+
+* Clone this repository
+* Navigate to the directory via terminal
+* `python cgol.py`
+* Note that it currently runs forever so you'll have to `ctrl-c` to kill it
