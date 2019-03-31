@@ -18,3 +18,7 @@ The universe of the Game of Life is an infinite, two-dimensional orthogonal grid
 * Navigate to the directory via terminal
 * `python cgol.py`
 * Note that it currently runs forever so you'll have to `ctrl-c` to kill it
+
+## IT'S ALIVE
+
+![gif](https://github.com/wemmm/conways-game-of-life/blob/master/2019-03-31%2017.48.40.gif)
